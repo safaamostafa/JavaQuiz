@@ -55,6 +55,7 @@
     <string name="d11_name">!</string>
     <string name="name_text" translatable="false">"Name : "</string>
     <string name="result1_name">/11</string>
-
+    <string name="pass_name"> Congratulations you passed the test</string>
+    <string name="fail_name"> Sorry you failed please revision</string>
 
 </resources>

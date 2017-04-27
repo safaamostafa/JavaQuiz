@@ -102,8 +102,6 @@ public class MainActivity extends AppCompatActivity {
             result = result + 1;
         }
 
-
-
         if (c3RadioButton) {
 
             result = result + 1;
@@ -145,9 +143,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-
-
-
         return result;
     }
 
@@ -173,6 +168,12 @@ public class MainActivity extends AppCompatActivity {
 
         String resultMessage= getString(R.string.name_text)+ name;
         resultMessage+="\n"+getString(R.string.result_name)+Result+getString(R.string.result1_name);
+        if (Result >5) {
+            resultMessage+="\n"+getString(R.string.pass_name);
+        }
+        else {
+            resultMessage+="\n"+getString(R.string.fail_name);
+        }
 
         return resultMessage;
     };
