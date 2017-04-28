@@ -35,54 +35,54 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the submit button is clicked.
      */
     private void submitResult(View view) {
-        EditText nameField =(EditText) findViewById(R.id.name_field);
+        EditText nameField = (EditText) findViewById(R.id.name_field);
         String name = nameField.getText().toString();
         RadioButton d1RadioButton = (RadioButton) findViewById(R.id.d1);
-        boolean hasD1RadioButton= d1RadioButton.isChecked();
+        boolean hasD1RadioButton = d1RadioButton.isChecked();
         RadioButton c2RadioButton = (RadioButton) findViewById(R.id.c2);
-        boolean hasC2RadioButton= c2RadioButton.isChecked();
+        boolean hasC2RadioButton = c2RadioButton.isChecked();
         RadioButton c3RadioButton = (RadioButton) findViewById(R.id.c3);
-        boolean hasC3RadioButton= c3RadioButton.isChecked();
+        boolean hasC3RadioButton = c3RadioButton.isChecked();
         RadioButton c4RadioButton = (RadioButton) findViewById(R.id.c4);
-        boolean hasC4RadioButton= c4RadioButton.isChecked();
+        boolean hasC4RadioButton = c4RadioButton.isChecked();
         RadioButton c5RadioButton = (RadioButton) findViewById(R.id.c5);
-        boolean hasC5RadioButton= c5RadioButton.isChecked();
+        boolean hasC5RadioButton = c5RadioButton.isChecked();
         RadioButton d6RadioButton = (RadioButton) findViewById(R.id.d6);
-        boolean hasD6RadioButton= d6RadioButton.isChecked();
+        boolean hasD6RadioButton = d6RadioButton.isChecked();
         RadioButton a8RadioButton = (RadioButton) findViewById(R.id.a8);
-        boolean hasA8RadioButton= a8RadioButton.isChecked();
-        EditText answerQuestion9 =(EditText) findViewById(R.id.answer_question9);
+        boolean hasA8RadioButton = a8RadioButton.isChecked();
+        EditText answerQuestion9 = (EditText) findViewById(R.id.answer_question9);
         String editText9 = answerQuestion9.getText().toString();
-        EditText answerQuestion10 =(EditText) findViewById(R.id.answer_question10);
+        EditText answerQuestion10 = (EditText) findViewById(R.id.answer_question10);
         String editText10 = answerQuestion10.getText().toString();
-        CheckBox  a11CheckBox = (CheckBox)findViewById(R.id.a11);
-        boolean hasA11Checkbox= a11CheckBox.isChecked();
-        CheckBox  b11CheckBox = (CheckBox)findViewById(R.id.b11);
-        boolean hasB11Checkbox= b11CheckBox.isChecked();
-        int result= calcuِlateResult(hasD1RadioButton,hasC2RadioButton,hasC3RadioButton,hasC4RadioButton,hasC5RadioButton,
-                hasD6RadioButton,hasA8RadioButton,editText9,editText10,hasA11Checkbox,hasB11Checkbox);
-        String resultMessage=createResultSummery(result,name);
+        CheckBox a11CheckBox = (CheckBox) findViewById(R.id.a11);
+        boolean hasA11Checkbox = a11CheckBox.isChecked();
+        CheckBox b11CheckBox = (CheckBox) findViewById(R.id.b11);
+        boolean hasB11Checkbox = b11CheckBox.isChecked();
+        int result = calcuِlateResult(hasD1RadioButton, hasC2RadioButton, hasC3RadioButton, hasC4RadioButton, hasC5RadioButton,
+                hasD6RadioButton, hasA8RadioButton, editText9, editText10, hasA11Checkbox, hasB11Checkbox);
+        String resultMessage = createResultSummery(result, name);
         displayMessage(resultMessage);
     }
+
     /**
      * This method is calculate the result .
      */
-    private int calcuِlateResult(boolean d1RadioButton, boolean c2RadioButton, boolean c3RadioButton,boolean c4RadioButton,
-                                 boolean c5RadioButton,boolean d6RadioButton,boolean a8RadioButton,
-                                 String editText9, String editText10,boolean a11CheckBox,boolean b11CheckBox) {
+    private int calcuِlateResult(boolean d1RadioButton, boolean c2RadioButton, boolean c3RadioButton, boolean c4RadioButton,
+                                 boolean c5RadioButton, boolean d6RadioButton, boolean a8RadioButton,
+                                 String editText9, String editText10, boolean a11CheckBox, boolean b11CheckBox) {
 
 
         int result = 0;
 
 
-
-        if (editText9.equals("int day = 1;")){
+        if (editText9.equals("int day = 1;")) {
 
             result += 1;
 
         }
 
-        if(editText10.equals("String month = \"January\";")){
+        if (editText10.equals("String month = \"January\";")) {
             result += 1;
         }
 
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
             result += 1;
         }
 
-        if (a11CheckBox &&b11CheckBox) {
+        if (a11CheckBox && b11CheckBox) {
 
             result += 1;
 
@@ -132,8 +132,6 @@ public class MainActivity extends AppCompatActivity {
 
         return result;
     }
-
-
 
     /**
      * This method displays the given text on the screen.
@@ -143,24 +141,25 @@ public class MainActivity extends AppCompatActivity {
         resultTextView.setText(message);
     }
 
-    private  String createResultSummery (int result,String name){
+    private String createResultSummery(int result, String name) {
 
-        String resultMessage= getString(R.string.name_text)+ name;
-        resultMessage+="\n"+getString(R.string.result_name)+result+getString(R.string.result1_name);
-        if (result >5) {
+        String resultMessage = getString(R.string.name_text) + name;
+        resultMessage += "\n" + getString(R.string.result_name) + result + getString(R.string.result1_name);
+        if (result > 5) {
             Toast.makeText(getApplicationContext(),
-                    "Correct!",
+                   " your Result: "+ result +"/11"+ "\n"+"Congratulations you passed the test",
                     Toast.LENGTH_SHORT)
                     .show();
-        }
-        else {
+        } else {
             Toast.makeText(getApplicationContext(),
-                    "Sorry! Better luck next time.",
+                    " your Result: "+ result +"/11"+"\n" + "Sorry! Better luck next time.",
                     Toast.LENGTH_SHORT)
                     .show();
         }
 
         return resultMessage;
-    };
+    }
+
+    ;
 
 }
