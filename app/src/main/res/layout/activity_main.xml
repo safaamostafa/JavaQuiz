@@ -599,7 +599,6 @@
             android:layout_marginLeft="@dimen/layout_marginLeft"
             android:layout_marginRight="@dimen/layout_marginRight"
             android:layout_marginBottom="@dimen/layout_marginBottom"
-            android:layout_marginStart="@dimen/layout_marginStart"
             android:layout_marginTop="@dimen/layout_marginTop"
             android:text="@string/button_name"
             android:textAllCaps="true"

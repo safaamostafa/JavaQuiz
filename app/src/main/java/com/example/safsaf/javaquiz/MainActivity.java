@@ -2,16 +2,22 @@ package com.example.safsaf.javaquiz;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
 import static android.R.attr.button;
+import static android.R.attr.layout;
 import static android.R.attr.name;
 
 /**
@@ -24,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Button submitTest = (Button) findViewById(R.id.submit_test);
+
         submitTest.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-             submitResult(v);
+
+                submitResult(v);
             }
         });
 
@@ -36,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method is called when the submit button is clicked.
      */
-    public void submitResult(View view) {
+    private void submitResult(View view) {
         EditText nameField =(EditText) findViewById(R.id.name_field);
         String name = nameField.getText().toString();
         RadioButton d1RadioButton = (RadioButton) findViewById(R.id.d1);
@@ -63,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
         boolean hasA11Checkbox= a11CheckBox.isChecked();
         CheckBox  b11CheckBox = (CheckBox)findViewById(R.id.b11);
         boolean hasB11Checkbox= b11CheckBox.isChecked();
-        int Result= calcuِlateResult(hasD1RadioButton,hasC2RadioButton,hasC3RadioButton,hasC4RadioButton,hasC5RadioButton,
+        int result= calcuِlateResult(hasD1RadioButton,hasC2RadioButton,hasC3RadioButton,hasC4RadioButton,hasC5RadioButton,
                 hasD6RadioButton,hasD7RadioButton,hasA8RadioButton,editText9,editText10,hasA11Checkbox,hasB11Checkbox);
-        String resultMessage=createResultSummery(Result,name);
+        String resultMessage=createResultSummery(result,name);
         displayMessage(resultMessage);
     }
     /**
@@ -78,16 +86,15 @@ public class MainActivity extends AppCompatActivity {
 
         int result = 0;
 
-            String answer9= editText9;
-        String answer10= editText10;
 
-        if (answer9.equals("int day = 1;")){
+
+        if (editText9.equals("int day = 1;")){
 
             result = result + 1;
 
         }
 
-        if(answer10.equals("String month = \"January\";")){
+        if(editText10.equals("String month = \"January\";")){
             result = result + 1;
         }
 
@@ -146,15 +153,7 @@ public class MainActivity extends AppCompatActivity {
         return result;
     }
 
-    /**
-     * This method is display the result .
-     */
-    private  void displayResult(int number) {
 
-        TextView resultTextView = (TextView) findViewById(R.id.result_text_view);
-        resultTextView.setText(number);
-
-    }
 
     /**
      * This method displays the given text on the screen.
@@ -164,15 +163,21 @@ public class MainActivity extends AppCompatActivity {
         resultTextView.setText(message);
     }
 
-    private  String createResultSummery (int Result,String name){
+    private  String createResultSummery (int result,String name){
 
         String resultMessage= getString(R.string.name_text)+ name;
-        resultMessage+="\n"+getString(R.string.result_name)+Result+getString(R.string.result1_name);
-        if (Result >5) {
-            resultMessage+="\n"+getString(R.string.pass_name);
+        resultMessage+="\n"+getString(R.string.result_name)+result+getString(R.string.result1_name);
+        if (result >5) {
+            Toast.makeText(getApplicationContext(),
+                    "Correct!",
+                    Toast.LENGTH_SHORT)
+                    .show();
         }
         else {
-            resultMessage+="\n"+getString(R.string.fail_name);
+            Toast.makeText(getApplicationContext(),
+                    "Sorry! Better luck next time.",
+                    Toast.LENGTH_SHORT)
+                    .show();
         }
 
         return resultMessage;
