@@ -8,15 +8,13 @@
     <string name="Q4_name">Q4. Which of the following Array declaration statement is illegal ?</string>
     <string name="Q5_name">Q5. What will happen if you try to compile and run the following code ?</string>
     <string name="Q6_name">Q6.In the given Array declaration, which expression returns the output as 5 ?</string>
-    <string name="Q7_name">Q7. Which declaration of the main() method is valid ?</string>
-    <string name="Q8_name">Q8.Is it possible in Java to create arrays of length zero ?</string>
+    <string name="Q8_name">Q7.Is it possible in Java to create arrays of length zero ?</string>
     <string name="A1_name">2variable</string>
     <string name="A2_name">default</string>
     <string name="A3_name">-128 to 127</string>
     <string name="A4_name">int [ ] a [ ] = new int [4] [4];</string>
     <string name="A5_name">1</string>
     <string name="A6_name">arr.length()</string>
-    <string name="A7_name">public void main( String args [] )</string>
     <string name="A8_name">Yes, you can create arrays of any type with length zero.</string>
     <string name="B8_name">No, it is not possible to create arrays of length zero in Java.</string>
     <string name="B1_name">#myvar</string>
@@ -25,7 +23,6 @@
     <string name="B4_name">int a[ ][ ] = new int [4] [4];</string>
     <string name="B5_name">Error: arr is referenced before it is initialized</string>
     <string name="B6_name">arr[].length()</string>
-    <string name="B7_name">public void static main( String args [] )</string>
     <string name="C1_name">+@$var</string>
     <string name="D1_name">$_myvar</string>
     <string name="C2_name">String</string>
@@ -38,17 +35,15 @@
     <string name="D5_name">Error: size of array must be defined</string>
     <string name="C6_name">arr[].length</string>
     <string name="D6_name">arr.length</string>
-    <string name="C7_name">final public static void main(String[] arr)</string>
-    <string name="D7_name">public static void main( String[] arr)</string>
     <string name="Q51_name">public class Test { public static void main(String argv[]) { int[] arr = new int[]{1,2,3}; System.out.println(arr[1]); } }</string>
     <string name="Q61_name">int [] arr = { 23, 5, 78, 34, 2};</string>
     <string name="button_name">Submit test</string>
     <string name="result_name">Result: </string>
     <string name="resultView_name">Your Result:</string>
-    <string name="Q9_name">Q9.Write Java code to define an integer variable called day.Give day  values 1.</string>
+    <string name="Q9_name">Q8.Write Java code to define an integer variable called day.Give day  values 1.</string>
     <string name="hint_answer">write answer</string>
-    <string name="Q10_name">Q10.Write Java code to define a String variable called month. Give month value January.</string>
-    <string name="Q11_name">Q11.which of these are arithmetic operators java?</string>
+    <string name="Q10_name">Q9.Write Java code to define a String variable called month. Give month value January.</string>
+    <string name="Q11_name">Q10.which of these are arithmetic operators java?</string>
     <string name="b11_name">-</string>
     <string name="a11_name">+</string>
     <string name="c11_name">==</string>

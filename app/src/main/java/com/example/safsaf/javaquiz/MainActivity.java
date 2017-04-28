@@ -2,23 +2,13 @@ package com.example.safsaf.javaquiz;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.text.NumberFormat;
-
-import static android.R.attr.button;
-import static android.R.attr.layout;
-import static android.R.attr.name;
 
 /**
  * This  app display the result of java quiz
@@ -59,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
         boolean hasC5RadioButton= c5RadioButton.isChecked();
         RadioButton d6RadioButton = (RadioButton) findViewById(R.id.d6);
         boolean hasD6RadioButton= d6RadioButton.isChecked();
-        RadioButton d7RadioButton = (RadioButton) findViewById(R.id.d7);
-        boolean hasD7RadioButton= d7RadioButton.isChecked();
         RadioButton a8RadioButton = (RadioButton) findViewById(R.id.a8);
         boolean hasA8RadioButton= a8RadioButton.isChecked();
         EditText answerQuestion9 =(EditText) findViewById(R.id.answer_question9);
@@ -72,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         CheckBox  b11CheckBox = (CheckBox)findViewById(R.id.b11);
         boolean hasB11Checkbox= b11CheckBox.isChecked();
         int result= calcuِlateResult(hasD1RadioButton,hasC2RadioButton,hasC3RadioButton,hasC4RadioButton,hasC5RadioButton,
-                hasD6RadioButton,hasD7RadioButton,hasA8RadioButton,editText9,editText10,hasA11Checkbox,hasB11Checkbox);
+                hasD6RadioButton,hasA8RadioButton,editText9,editText10,hasA11Checkbox,hasB11Checkbox);
         String resultMessage=createResultSummery(result,name);
         displayMessage(resultMessage);
     }
@@ -80,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is calculate the result .
      */
     private int calcuِlateResult(boolean d1RadioButton, boolean c2RadioButton, boolean c3RadioButton,boolean c4RadioButton,
-                                 boolean c5RadioButton,boolean d6RadioButton,boolean d7RadioButton,boolean a8RadioButton,
+                                 boolean c5RadioButton,boolean d6RadioButton,boolean a8RadioButton,
                                  String editText9, String editText10,boolean a11CheckBox,boolean b11CheckBox) {
 
 
@@ -90,63 +78,55 @@ public class MainActivity extends AppCompatActivity {
 
         if (editText9.equals("int day = 1;")){
 
-            result = result + 1;
+            result += 1;
 
         }
 
         if(editText10.equals("String month = \"January\";")){
-            result = result + 1;
+            result += 1;
         }
 
         if (d1RadioButton) {
 
-            result = result + 1;
+            result += 1;
 
         }
 
         if (c2RadioButton) {
 
-            result = result + 1;
+            result += 1;
         }
 
         if (c3RadioButton) {
 
-            result = result + 1;
+            result += 1;
 
         }
 
         if (c4RadioButton) {
 
-            result = result + 1;
+            result += 1;
         }
 
         if (c5RadioButton) {
 
-            result = result + 1;
+            result += 1;
 
         }
 
         if (d6RadioButton) {
 
-            result = result + 1;
-        }
-
-
-
-        if (d7RadioButton) {
-
-            result = result + 1;
-
+            result += 1;
         }
 
         if (a8RadioButton) {
 
-            result = result + 1;
+            result += 1;
         }
 
         if (a11CheckBox &&b11CheckBox) {
 
-            result = result + 1;
+            result += 1;
 
         }
 
